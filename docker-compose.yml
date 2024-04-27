@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nest-app:
+    container_name: fcc-nest-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    restart: on-failure
+    networks: 
+      - fcc-nest_default
+networks:
+    fcc-nest_default:
